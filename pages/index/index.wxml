@@ -17,7 +17,7 @@
     -->
     <swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}">
       <swiper-item wx:for="{{swiperList}}" wx:key="goos_id">
-        <navigator>
+        <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
           <image mode="widthFix" src="{{item.image_src}}"></image>
         </navigator>
       </swiper-item>
@@ -27,7 +27,7 @@
 
   <!-- 导航 开始 -->
   <view class="index_cate">
-    <navigator 
+    <navigator url="/pages/category/category" open-type="switchTab"
       wx:for="{{catesList}}"
       wx:key="name">
     <image mode="widthFix" src="{{item.image_src}}" />
@@ -53,6 +53,7 @@
         wx:for="{{item1.product_list}}"
         wx:for-item="item2"
         wx:for-index="index2"
+        url="/pages/goods_list/goods_list?query=饰品"
         >
         <image  src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}" />
         </navigator>

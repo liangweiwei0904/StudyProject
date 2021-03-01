@@ -8,9 +8,24 @@
             <text >其他</text>
         </view>
         <view class="fb_content">
-            <textarea ></textarea>
-            <view class="fb_tool">自定义工具栏</view>
+            <textarea value="{{textVal}}" bindinput="handleTextInput" placeholder="请描述一下您的问题"></textarea>
+            <view class="fb_tool">
+                <button bindtap="handleChooseImg">+</button>
+                <!-- 当数组试一些简单数组的时候，它所绑定的key要加* -->
+                <view class="up_img_item"
+                wx:for="{{chooseImgs}}"
+                wx:key="*this"
+                bindtap="handleRemoveImg"
+                data-index="{{index}}"
+                >
+                    <Upimg src="{{item}}"></Upimg>
+                </view>
+            </view>
         </view>
-        <view class="form_btn_wrap"></view>
+        <view class="form_btn_wrap">
+            <button bindtap="handleFormSubmit" >
+                <icon type="success_no_circle" color="white" size="16" ></icon>
+                提交</button>
+        </view>
     </view>
 </Tabs>

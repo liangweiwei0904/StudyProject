@@ -63,7 +63,7 @@
                 <text >联系客服</text>
                 <text >18146707600</text>
             </view>
-            <navigator url="/pages/feedback/feedback" > class="app_info_item">意见反馈</navigator>
+            <navigator url="/pages/feedback/feedback"  class="app_info_item">意见反馈</navigator>
             <view class="app_info_item">关于我们</view>
         </view>
         <!-- 推荐 -->
